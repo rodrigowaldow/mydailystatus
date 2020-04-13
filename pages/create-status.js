@@ -42,21 +42,135 @@ export default function CreateStatus() {
   }
 
   return (
-    <div>
-      <h1>Create Status</h1>
-      <label className="block">
-        <input type="radio" name="status" value="bem" onClick={onStatusChange} />
-          Estou bem e sem sintomas.
-        </label>
-      <label className="block">
-        <input type="radio" name="status" value="gripe" onClick={onStatusChange} />
-          Estou com sintomas de gripe/resfriado.
-        </label>
-      <label className="block">
-        <input type="radio" name="status" value="covid" onClick={onStatusChange} />
-          Estou com sintomas da COVID-19.
-        </label>
-        Sua posição atual: {JSON.stringify(dados)}
+    <div className="container">
+      <div className="w-full max-w-xs">
+        <section>
+          <h1>Cadastrar Status</h1>
+          <p>Preencha os campos abaixo de acordo com seus sintomas.</p>
+        </section>
+
+        <form className="bg-white shadow-md rounded pt-6 pb-8 mb-4">
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="febre">
+              Possui febre?
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Sim" />Sim
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Não" defaultChecked />Não
+            </label>
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="febre">
+              Está com dor de cabeça?
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Sim" />Sim
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Não" defaultChecked />Não
+            </label>
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="febre">
+              Sente dores no corpo?
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Sim" />Sim
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Não" defaultChecked />Não
+            </label>
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="febre">
+              Tem cansaço, fadiga?
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Sim" />Sim
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Não" defaultChecked />Não
+            </label>
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="febre">
+              Sentimento de exautão extrema?
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Sim" />Sim
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Não" defaultChecked />Não
+            </label>
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="febre">
+              Possui congestão nasal?
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Sim" />Sim
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Não" defaultChecked />Não
+            </label>
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="febre">
+              Espirra com frequência?
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Sim" />Sim
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Não" defaultChecked />Não
+            </label>
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="febre">
+              Tem dor de garganta?
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Sim" />Sim
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Não" defaultChecked />Não
+            </label>
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="febre">
+              Tem tosse seca?
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Sim" />Sim
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Não" defaultChecked />Não
+            </label>
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="febre">
+              Sente falta de ar?
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Sim" />Sim
+            </label>
+            <label className="block">
+              <input className="" type="radio" name="febre" value="Não" defaultChecked />Não
+            </label>
+          </div>
+        </form>
+      </div>
       <button onClick={getMyLocation}>Buscar minha localização</button>
       <button onClick={save}>Salvar meu status</button>
     </div>

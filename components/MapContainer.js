@@ -42,7 +42,14 @@ export class MapContainer extends Component {
   
   render(){
     return (
-      <GoogleMapReact defaultCenter={defaultProps.center} defaultZoom={defaultProps.zoom}>
+      <GoogleMapReact 
+      bootstrapURLKeys={{
+        key: "AIzaSyA5-Epvqlzd6_rGDq4PQe6bx6AWbS0DBqU",
+        language: "pt-br"
+      }}
+      defaultCenter={defaultProps.center} 
+      defaultZoom={defaultProps.zoom}
+      >
         {this.displayMarkers()}
       </GoogleMapReact>
     );
