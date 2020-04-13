@@ -3,40 +3,47 @@ import router from "next/router";
 import auth0 from "../lib/auth0";
 import { distance } from "../lib/geo";
 import { db } from "../lib/db";
+import { MapContainer } from "../components/MapContainer";
 
 export default function App(props) {
-    useEffect(() => {
-        if(!props.isAuth) {
-          router.push("/");
-        } else if(props.forceCreate) {
-          router.push("/create-status");
-        }
-    });
+  useEffect(() => {
+      if(!props.isAuth) {
+        router.push("/");
+      } else if(props.forceCreate) {
+        router.push("/create-status");
+      }
+  });
 
-    if(!props.isAuth || props.forceCreate) {
-      return null;
-    }
+  if(!props.isAuth || props.forceCreate) {
+    return null;
+  }
 
-    return (
-      //TODO: Colocar dados no mapa - google-map-react
-      //TAG: Lat, long e status
-        <div>
-          <h1>Status próximos a você:</h1>
+  
+
+  return (
+      <div style={{width: '100%', height: '600px'}}>
+        <h1 className="text-xl font-bold">Status próximos a você:</h1>
+
+        <div className="py-4">
           <table>
-            { props.checkins.map( checkin => {
+            { 
+              props.checkins.map( checkin => {
                 return (
                   <tr>
-                    <td>{checkin.id === props.user.sub &&  "Seu status"}</td>
+                    <td>{checkin.id === props.user.sub &&  "Seu status:"}</td>
                     <td>{checkin.status}</td>
                     <td>{JSON.stringify(checkin.coords)}</td>
-                    <td>{checkin.distance}</td>
+                    <td>{checkin.distance}Km</td>
                   </tr>
                 );
               }) 
             }
           </table>
         </div>
-    );
+
+        <MapContainer checkins={props.checkins}/>
+      </div>
+  );
 }
 
 export async function getServerSideProps({req, res}){
@@ -65,7 +72,7 @@ export async function getServerSideProps({req, res}){
           .collection("checks")
           .near({
             center: todaysData.coordinates,
-            radius: 1000 //TODO: personalizar raio como opção
+            radius: 1000000 //TODO: personalizar raio como opção
           })
           .get()
 
@@ -79,7 +86,7 @@ export async function getServerSideProps({req, res}){
               long: doc.data().coordinates.longitude
             },
             distance: distance(
-              todaysData.coordinates.latitude, //-29.737030, 
+              todaysData.coordinates.latitude,  //-29.737030, 
               todaysData.coordinates.longitude, //-52.448650,  
               doc.data().coordinates.latitude, 
               doc.data().coordinates.longitude
