@@ -16,8 +16,9 @@ Esse projeto foi desenvolvido através das video aulas ministradas pelo Túlio, 
 Abaixo segue o que foi utilizado na criação deste projeto:
 - [ReactJS](https://reactjs.org/) - O React é um framework que permite o desenvolvimento de aplicações declarativas e baseadas em componentes usando JavaScript;
 - [NodeJS](https://nodejs.org/en/) - É um JavaScript runtime criado na engine JavaScript V8 do Chrome;
-- [Express](http://expressjs.com/) - Express é uma framework minimalista e flexível para o Node.js que fornece um conjunto robusto de recursos para realização de requisições HTTP;
+- [NextJS](https://nextjs.org/) - Visa agilizar o processo de construção de um app React oferecendo componentes para rota, suporte a SSR (server side rendering) além de webpack já configurado para React e transpilação de ES6 e ES7.
 - [Axios](https://github.com/axios/axios) - O Axios é um cliente HTTP baseado em Promises para Browser e NodeJS;
+- [Auth0](https://auth0.com/) - O Auth0 autentica e autoriza aplicativos e APIs independentemente do provedor de identidade, da plataforma, da pilha e do dispositivo.
 - [Firebase](https://firebase.google.com/?hl=pt-br) - O Firebase Realtime Database é um banco de dados hospedado na nuvem.
 
 O deploy do projeto foi realizado utilizando a ferramenta [Zeit](https://zeit.co/).
