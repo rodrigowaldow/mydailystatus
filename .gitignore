@@ -3,3 +3,7 @@
 # dependencies
 /node_modules
 /.next
+
+.env
+.now
+firebase-secret.json

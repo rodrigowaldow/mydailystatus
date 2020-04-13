@@ -14,7 +14,7 @@ export default function NavBar() {
       <div className="bg-gray-500 py-4 text-center">
         <NavLink href="/sobre">Sobre</NavLink>
         <NavLink href="/cadastro">Cadastro</NavLink>
-        <NavLink href="/login">Login</NavLink>
+        <NavLink href="/entrar">Entrar</NavLink>
       </div>
   );
 }

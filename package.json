@@ -12,7 +12,10 @@
   "license": "MIT",
   "dependencies": {
     "@auth0/nextjs-auth0": "^0.11.0",
+    "axios": "^0.19.2",
     "dotenv": "^8.2.0",
+    "firebase-admin": "^8.10.0",
+    "geofirestore": "^3.4.1",
     "next": "^9.3.4",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.7.0",
